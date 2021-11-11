@@ -7,14 +7,20 @@ class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      title: "Hello from BridgeLabz"
+      title: "Hello from BridgeLabz",
+      userName: ''
     }
     this.url = "https://www.bridgelabz.com/";
   }
 
-  onClick = ($event) => {
-    console.log("image clicked", $event);
+  onClick = (event) => {
+    console.log("image clicked", event);
     window.open(this.url, "_blank");
+  }
+
+  onNameChange = (event) => {
+    console.log("value is " , )
+    this.setState({userName: event.target.value})
   }
 
   render() {
@@ -25,6 +31,9 @@ class App extends React.Component {
         <p>
           {this.state.title}
         </p>
+        <h1>
+          Hello {this.state.userName}
+        </h1>
       </header>
     </div>
     )
